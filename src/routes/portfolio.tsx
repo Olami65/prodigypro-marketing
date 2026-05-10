@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/portfolio")({
-  head: () => ({
-    meta: [
-      { title: "Portfolio — ProdigyPro Marketing" },
-      { name: "description", content: "Selected case studies and outcomes from ProdigyPro Marketing engagements." },
-      { property: "og:title", content: "Portfolio — ProdigyPro Marketing" },
-      { property: "og:description", content: "Outcomes that speak for themselves." },
-    ],
+  head: () => buildSeo({
+    title: "Portfolio & Case Studies — ProdigyPro Marketing",
+    description: "Selected case studies and measurable outcomes from ProdigyPro engagements: +150% e‑commerce sales, +400% SaaS leads, 45% real estate close rates, +200% local foot traffic and more.",
+    keywords: "marketing case studies, digital marketing portfolio, growth case studies, SaaS marketing results, real estate funnel results, e-commerce growth case study",
+    path: "/portfolio",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop",
   }),
   component: Portfolio,
 });

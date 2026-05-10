@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Megaphone, Globe, Target, Sparkles, Rocket, Youtube, MapPin, BarChart3, Check } from "lucide-react";
 
+import { buildSeo } from "@/lib/seo";
+
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — ProdigyPro Marketing" },
-      { name: "description", content: "Digital marketing, web development, sales funnels, lead generation, SEO, GMB and YouTube monetization." },
-      { property: "og:title", content: "Services — ProdigyPro Marketing" },
-      { property: "og:description", content: "Full‑stack digital growth services." },
-    ],
+  head: () => buildSeo({
+    title: "Services — Digital Marketing, Web, Funnels & SEO | ProdigyPro",
+    description: "End‑to‑end digital growth services: digital marketing, website development, sales funnels, social media, lead generation, YouTube monetization, GMB & local SEO, analytics and CRO.",
+    keywords: "digital marketing services, website development, sales funnel design, lead generation services, SEO services, GMB optimization, YouTube monetization, social media marketing, CRO services",
+    path: "/services",
   }),
   component: Services,
 });

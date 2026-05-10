@@ -5,16 +5,15 @@ import {
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "ProdigyPro Marketing — Premium Digital Growth Agency" },
-      { name: "description", content: "We engineer measurable growth for ambitious brands. Websites, funnels, SEO, lead generation and brand strategy." },
-      { property: "og:title", content: "ProdigyPro Marketing — Premium Digital Growth Agency" },
-      { property: "og:description", content: "Engineering measurable growth for ambitious brands." },
-      { property: "og:image", content: hero },
-    ],
+  head: () => buildSeo({
+    title: "ProdigyPro Marketing — Premium Digital Growth Agency",
+    description: "Premium digital marketing agency engineering measurable growth for ambitious brands. Websites, funnels, SEO, lead generation, social media and brand strategy that compound.",
+    keywords: "digital marketing agency, premium marketing agency, sales funnels, SEO, lead generation, website development, social media marketing, GMB optimization, YouTube monetization, brand strategy",
+    path: "/",
+    image: hero,
   }),
   component: Home,
 });
