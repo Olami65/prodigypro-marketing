@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 
+import { buildSeo } from "@/lib/seo";
+
 export const Route = createFileRoute("/blog")({
-  head: () => ({
-    meta: [
-      { title: "Blog — ProdigyPro Marketing" },
-      { name: "description", content: "Insights, frameworks and case studies on digital growth from the ProdigyPro team." },
-      { property: "og:title", content: "ProdigyPro Blog" },
-      { property: "og:description", content: "Insights and frameworks on digital growth." },
-    ],
+  head: () => buildSeo({
+    title: "Growth Journal — Insights, Frameworks & Case Studies | ProdigyPro",
+    description: "The ProdigyPro Growth Journal — practical frameworks, teardowns and case studies on conversion, funnels, local SEO, paid media, the creator economy and modern brand building.",
+    keywords: "marketing blog, growth marketing blog, CRO playbook, sales funnel guide, local SEO 2026, YouTube monetization tips, brand vs performance marketing",
+    path: "/blog",
   }),
   component: Blog,
 });

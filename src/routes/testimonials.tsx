@@ -1,14 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Star, Quote } from "lucide-react";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Testimonials — ProdigyPro Marketing" },
-      { name: "description", content: "What founders and operators say about working with ProdigyPro Marketing." },
-      { property: "og:title", content: "Client Testimonials — ProdigyPro Marketing" },
-      { property: "og:description", content: "Real words from clients we've partnered with." },
-    ],
+  head: () => buildSeo({
+    title: "Client Testimonials & Reviews — ProdigyPro Marketing",
+    description: "Real words from real clients. Hear from founders, CMOs and operators across SaaS, real estate, retail, fintech and creator brands on what it's like to work with ProdigyPro.",
+    keywords: "ProdigyPro reviews, marketing agency testimonials, client reviews, digital marketing testimonials, agency case study reviews",
+    path: "/testimonials",
   }),
   component: Testimonials,
 });

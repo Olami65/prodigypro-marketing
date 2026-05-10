@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Send, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
 
+import { buildSeo } from "@/lib/seo";
+
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — ProdigyPro Marketing" },
-      { name: "description", content: "Reach out to ProdigyPro Marketing — call, email or send us a message to start a project." },
-      { property: "og:title", content: "Contact ProdigyPro Marketing" },
-      { property: "og:description", content: "Let's talk about your growth." },
-    ],
+  head: () => buildSeo({
+    title: "Contact ProdigyPro — Start a Growth Project Today",
+    description: "Talk to ProdigyPro Marketing. Call +1 (267) 497‑6688, email support@prodigypro-marketing.com or send us a message — we respond within one business day with next steps.",
+    keywords: "contact ProdigyPro, hire digital marketing agency, marketing agency contact, growth agency consultation, book strategy call",
+    path: "/contact",
   }),
   component: Contact,
 });

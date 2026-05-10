@@ -1,14 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, Award, Users, TrendingUp, Heart } from "lucide-react";
+import { Award, Users, TrendingUp, Heart } from "lucide-react";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — ProdigyPro Marketing" },
-      { name: "description", content: "ProdigyPro is a premium digital marketing agency built to engineer measurable growth for ambitious brands." },
-      { property: "og:title", content: "About ProdigyPro Marketing" },
-      { property: "og:description", content: "A premium agency built for ambitious brands." },
-    ],
+  head: () => buildSeo({
+    title: "About ProdigyPro — Premium Digital Marketing Agency",
+    description: "Founded by operators for operators, ProdigyPro is a premium digital marketing agency that engineers measurable growth for 200+ ambitious brands across SaaS, real estate, e‑commerce and the creator economy.",
+    keywords: "about ProdigyPro, digital marketing agency story, marketing team, growth agency, premium agency",
+    path: "/about",
   }),
   component: About,
 });
