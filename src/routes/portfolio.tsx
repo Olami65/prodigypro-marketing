@@ -1,0 +1,60 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/portfolio")({
+  head: () => ({
+    meta: [
+      { title: "Portfolio — ProdigyPro Marketing" },
+      { name: "description", content: "Selected case studies and outcomes from ProdigyPro Marketing engagements." },
+      { property: "og:title", content: "Portfolio — ProdigyPro Marketing" },
+      { property: "og:description", content: "Outcomes that speak for themselves." },
+    ],
+  }),
+  component: Portfolio,
+});
+
+const projects = [
+  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", desc: "Complete e‑commerce transformation with re‑platform, CRO and paid acquisition.", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=700&fit=crop" },
+  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", desc: "Multi‑channel campaign across paid, content and lifecycle.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=700&fit=crop" },
+  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", desc: "High‑converting luxury real estate funnel and nurture sequence.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=700&fit=crop" },
+  { tag: "Local SEO & GMB", title: "Restaurant Chain Transformation", metric: "+200% Foot Traffic", desc: "Local SEO and GMB optimization across 24 locations.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=700&fit=crop" },
+  { tag: "Brand & Web", title: "Fintech Brand Launch", metric: "0 → 25k Users", desc: "End‑to‑end brand identity, web and acquisition for a fintech launch.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=700&fit=crop" },
+  { tag: "YouTube", title: "Creator Monetization System", metric: "+8x Channel Revenue", desc: "Channel strategy, packaging and monetization for a creator scaling past 1M subs.", img: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=900&h=700&fit=crop" },
+];
+
+function Portfolio() {
+  return (
+    <>
+      <section className="mx-auto max-w-5xl px-5 py-20 text-center">
+        <span className="text-xs uppercase tracking-[0.25em] text-primary">Portfolio</span>
+        <h1 className="mt-3 font-display text-5xl font-bold md:text-6xl">Work we're <span className="text-gradient">proud</span> of.</h1>
+        <p className="mx-auto mt-6 max-w-2xl text-muted-foreground md:text-lg">
+          A snapshot of recent engagements across SaaS, real estate, e‑commerce, local services and the creator economy.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-20">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p) => (
+            <article key={p.title} className="group overflow-hidden rounded-2xl glass">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                <span className="absolute top-4 left-4 rounded-full bg-background/70 px-3 py-1 text-[11px] uppercase tracking-wider backdrop-blur">{p.tag}</span>
+                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white">{p.metric}</span>
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold">{p.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-5 py-12 text-center">
+        <h2 className="text-3xl font-bold md:text-4xl">Your story could be next.</h2>
+        <Link to="/contact" className="mt-6 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white">Start a project</Link>
+      </section>
+    </>
+  );
+}
