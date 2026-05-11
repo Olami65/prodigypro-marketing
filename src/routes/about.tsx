@@ -72,9 +72,12 @@ function About() {
 
       <section className="mx-auto max-w-5xl px-5 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Ready to grow with us?</h2>
-        <Link to="/contact" className="mt-6 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)]">
-          Start the conversation
-        </Link>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <BookCallButton />
+          <Link to="/contact" className="inline-flex items-center rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/40 transition">
+            Start the conversation
+          </Link>
+        </div>
       </section>
     </>
   );
