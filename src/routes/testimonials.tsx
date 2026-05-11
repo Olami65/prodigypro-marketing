@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Star, Quote } from "lucide-react";
 import { buildSeo } from "@/lib/seo";
+import { BookCallButton } from "@/components/BookCallButton";
 
 export const Route = createFileRoute("/testimonials")({
   head: () => buildSeo({
