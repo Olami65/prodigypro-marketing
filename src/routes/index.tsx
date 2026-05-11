@@ -163,16 +163,21 @@ function Home() {
           </Link>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {work.map((w) => (
-            <article key={w.title} className="group overflow-hidden rounded-2xl glass">
+          {work.map((w, i) => (
+            <article
+              key={w.title}
+              className="reveal hover-lift group overflow-hidden rounded-2xl glass"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={w.img} alt={w.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <img src={w.img} alt={w.title} loading="lazy" width={1280} height={960} className="h-full w-full object-cover transition duration-[900ms] ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <span className="absolute top-4 left-4 rounded-full bg-background/70 px-3 py-1 text-[11px] uppercase tracking-wider backdrop-blur">{w.tag}</span>
-                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white">{w.metric}</span>
+                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white animate-pulse-ring">{w.metric}</span>
               </div>
-              <div className="p-5">
+              <div className="p-5 flex items-center justify-between">
                 <h3 className="text-lg font-semibold">{w.title}</h3>
+                <ChevronRight size={16} className="text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
               </div>
             </article>
           ))}
