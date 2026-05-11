@@ -57,7 +57,7 @@ function Testimonials() {
 
       <section className="mx-auto max-w-5xl px-5 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Become our next success story.</h2>
-        <Link to="/contact" className="mt-6 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white">Book a call</Link>
+        <div className="mt-6"><BookCallButton /></div>
       </section>
     </>
   );
