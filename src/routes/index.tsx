@@ -41,9 +41,9 @@ const stats = [
 ];
 
 const work = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" },
+  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: workEcommerce },
+  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: workSaas },
+  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: workRealestate },
 ];
 
 const why = [
