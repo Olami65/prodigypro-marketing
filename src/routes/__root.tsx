@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -13,7 +15,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FloatingActions } from "@/components/FloatingActions";
 import { useReveal } from "@/hooks/use-reveal";
-import { useRouterState } from "@tanstack/react-router";
 
 function NotFoundComponent() {
   return (
@@ -95,29 +96,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   useReveal();
-  // Re-run reveal observer + scroll to top on route change
-  if (typeof window !== "undefined") {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffectOnPath(pathname);
-  }
-  return (
-    <QueryClientProvider client={queryClient}>
-      <SiteHeader />
-      <main key={pathname} className="pt-24 animate-fade-in">
-        <Outlet />
-      </main>
-      <SiteFooter />
-      <FloatingActions />
-    </QueryClientProvider>
-  );
-}
 
-import { useEffect } from "react";
-function useEffectOnPath(pathname: string) {
   useEffect(() => {
+    if (typeof window === "undefined") return;
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    // re-trigger reveal observer for newly mounted content
-    requestAnimationFrame(() => {
+    const id = requestAnimationFrame(() => {
       const els = document.querySelectorAll<HTMLElement>(".reveal:not(.in-view)");
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
@@ -129,5 +112,17 @@ function useEffectOnPath(pathname: string) {
       }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
       els.forEach((el) => io.observe(el));
     });
+    return () => cancelAnimationFrame(id);
   }, [pathname]);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SiteHeader />
+      <main key={pathname} className="pt-24 animate-fade-in">
+        <Outlet />
+      </main>
+      <SiteFooter />
+      <FloatingActions />
+    </QueryClientProvider>
+  );
 }
