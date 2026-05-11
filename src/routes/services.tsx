@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Megaphone, Globe, Target, Sparkles, Rocket, Youtube, MapPin, BarChart3, Check } from "lucide-react";
 
 import { buildSeo } from "@/lib/seo";
+import { BookCallButton } from "@/components/BookCallButton";
 
 export const Route = createFileRoute("/services")({
   head: () => buildSeo({
@@ -63,7 +64,12 @@ function Services() {
       <section className="mx-auto max-w-5xl px-5 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Not sure where to start?</h2>
         <p className="mt-3 text-muted-foreground">Book a free 30‑minute strategy call and we'll map a plan together.</p>
-        <Link to="/contact" className="mt-6 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white">Book strategy call</Link>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <BookCallButton label="Book a Free Strategy Call" />
+          <Link to="/contact" className="inline-flex items-center rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/40 transition">
+            Send a message
+          </Link>
+        </div>
       </section>
     </>
   );

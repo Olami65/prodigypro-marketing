@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, CalendarDays } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { CALENDLY_URL } from "@/components/BookCallButton";
 
 export function SiteFooter() {
   return (
@@ -38,7 +39,20 @@ export function SiteFooter() {
               <li><Link to="/about" className="hover:text-foreground">About</Link></li>
               <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
               <li><Link to="/portfolio" className="hover:text-foreground">Portfolio</Link></li>
+              <li><Link to="/testimonials" className="hover:text-foreground">Testimonials</Link></li>
               <li><Link to="/blog" className="hover:text-foreground">Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
+              <li>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 hover:text-foreground"
+                  aria-label="Book a strategy call (opens Calendly in a new tab)"
+                >
+                  <CalendarDays size={13} aria-hidden="true" /> Book a Call
+                </a>
+              </li>
             </ul>
           </div>
 
