@@ -34,12 +34,16 @@ function Testimonials() {
 
       <section className="mx-auto max-w-7xl px-5 pb-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((r) => (
-            <article key={r.name} className="relative rounded-2xl glass p-7">
+          {reviews.map((r, i) => (
+            <article
+              key={r.name}
+              className="reveal hover-lift relative rounded-2xl glass p-7"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
               <Quote size={28} className="text-primary/60" />
               <p className="mt-4 text-sm leading-relaxed">{r.quote}</p>
               <div className="mt-5 flex items-center gap-1 text-primary">
-                {[...Array(5)].map((_, i) => <Star key={i} size={13} fill="currentColor" />)}
+                {[...Array(5)].map((_, j) => <Star key={j} size={13} fill="currentColor" />)}
               </div>
               <div className="mt-4 border-t border-border/60 pt-4">
                 <div className="font-semibold text-sm">{r.name}</div>
