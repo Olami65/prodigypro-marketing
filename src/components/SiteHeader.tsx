@@ -79,18 +79,27 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <div className="flex items-center gap-1">
-            <a href="https://www.facebook.com/ProdigyproMarketing" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-2 text-muted-foreground hover:text-foreground transition">
-              <Facebook size={16} />
+        <div className="hidden md:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-1">
+            <a href="https://www.facebook.com/ProdigyproMarketing" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="p-2 text-muted-foreground hover:text-foreground transition">
+              <Facebook size={16} aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/olaitan-expert65" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-muted-foreground hover:text-foreground transition">
-              <Linkedin size={16} />
+            <a href="https://www.linkedin.com/in/olaitan-expert65" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile" className="p-2 text-muted-foreground hover:text-foreground transition">
+              <Linkedin size={16} aria-hidden="true" />
             </a>
-            <a href="https://www.instagram.com/eric.olami65" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 text-muted-foreground hover:text-foreground transition">
-              <Instagram size={16} />
+            <a href="https://www.instagram.com/eric.olami65" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram" className="p-2 text-muted-foreground hover:text-foreground transition">
+              <Instagram size={16} aria-hidden="true" />
             </a>
           </div>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Book a strategy call (opens Calendly in a new tab)"
+            className="hidden md:inline-flex items-center gap-1.5 rounded-full glass px-4 py-2.5 text-sm font-semibold hover:border-primary/40 transition"
+          >
+            <CalendarDays size={14} aria-hidden="true" /> Book a Call
+          </a>
           <Link
             to="/contact"
             className="rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_oklch(0.62_0.24_305/0.7)] hover:translate-y-[-1px] transition"
@@ -100,16 +109,19 @@ export function SiteHeader() {
         </div>
 
         <button
+          ref={menuButtonRef}
           className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
         </button>
       </div>
 
       {open && (
-        <div className="lg:hidden glass border-t border-border/60 mt-2">
+        <div id="mobile-nav" className="lg:hidden glass border-t border-border/60 mt-2 animate-fade-up">
           <div className="px-5 py-4 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
@@ -122,17 +134,26 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full glass px-5 py-2.5 text-sm font-semibold"
+            >
+              <CalendarDays size={14} aria-hidden="true" /> Book a Strategy Call
+            </a>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white text-center"
+              className="mt-1 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white text-center"
             >
               Get Started
             </Link>
             <div className="flex items-center gap-3 pt-3 mt-2 border-t border-border/60">
-              <a href="https://www.facebook.com/ProdigyproMarketing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={18} /></a>
-              <a href="https://www.linkedin.com/in/olaitan-expert65" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
-              <a href="https://www.instagram.com/eric.olami65" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a>
+              <a href="https://www.facebook.com/ProdigyproMarketing" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><Facebook size={18} aria-hidden="true" /></a>
+              <a href="https://www.linkedin.com/in/olaitan-expert65" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile"><Linkedin size={18} aria-hidden="true" /></a>
+              <a href="https://www.instagram.com/eric.olami65" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram"><Instagram size={18} aria-hidden="true" /></a>
             </div>
           </div>
         </div>
