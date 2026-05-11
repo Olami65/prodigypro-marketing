@@ -125,21 +125,25 @@ function Home() {
 
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-5 py-20">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center reveal">
           <span className="text-xs uppercase tracking-[0.25em] text-primary">Services</span>
           <h2 className="mt-3 max-w-2xl text-4xl font-bold md:text-5xl">Complete digital solutions, <span className="text-gradient">end‑to‑end</span>.</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">From strategy to execution — every channel, every stage.</p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <div key={s.title} className="group relative rounded-2xl glass p-6 transition hover:border-primary/40 hover:-translate-y-1">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-white shadow-[var(--shadow-glow)]">
+          {services.map((s, i) => (
+            <div
+              key={s.title}
+              className="reveal group relative rounded-2xl glass p-6 transition hover:border-primary/40 hover-lift"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-white shadow-[var(--shadow-glow)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
                 <s.icon size={20} />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              <Link to="/services" className="mt-4 inline-flex items-center gap-1 text-sm text-primary opacity-0 group-hover:opacity-100 transition">
+              <Link to="/services" className="mt-4 inline-flex items-center gap-1 text-sm text-primary opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">
                 Learn more <ChevronRight size={14} />
               </Link>
             </div>
