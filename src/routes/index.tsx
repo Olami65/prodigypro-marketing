@@ -260,9 +260,12 @@ function Home() {
           <div className="relative px-6 py-16 md:px-16 md:py-20 text-center">
             <h2 className="font-display text-4xl font-bold md:text-5xl">Ready to transform your <span className="text-gradient">business</span>?</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Let's design a custom growth strategy that delivers real, measurable results.</p>
-            <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)]">
-              Book a Strategy Call <ArrowRight size={16} />
-            </Link>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <BookCallButton />
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/40 transition">
+                Send a message
+              </Link>
+            </div>
           </div>
         </div>
       </section>
