@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
-import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Facebook, Instagram, Linkedin, CalendarDays } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { CALENDLY_URL } from "@/components/BookCallButton";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,6 +17,7 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -23,6 +25,19 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <header
