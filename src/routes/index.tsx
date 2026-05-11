@@ -9,6 +9,7 @@ import workEcommerce from "@/assets/work-ecommerce.jpg";
 import workSaas from "@/assets/work-saas.jpg";
 import workRealestate from "@/assets/work-realestate.jpg";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
+import { BookCallButton } from "@/components/BookCallButton";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
