@@ -5,6 +5,10 @@ import {
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+import workEcommerce from "@/assets/work-ecommerce.jpg";
+import workSaas from "@/assets/work-saas.jpg";
+import workRealestate from "@/assets/work-realestate.jpg";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
