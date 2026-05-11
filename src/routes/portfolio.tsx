@@ -40,10 +40,14 @@ function Portfolio() {
 
       <section className="mx-auto max-w-7xl px-5 pb-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article key={p.title} className="group overflow-hidden rounded-2xl glass">
+          {projects.map((p, i) => (
+            <article
+              key={p.title}
+              className="reveal hover-lift group overflow-hidden rounded-2xl glass"
+              style={{ transitionDelay: `${i * 90}ms` }}
+            >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <img src={p.img} alt={p.title} loading="lazy" width={1280} height={960} className="h-full w-full object-cover transition duration-[900ms] ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                 <span className="absolute top-4 left-4 rounded-full bg-background/70 px-3 py-1 text-[11px] uppercase tracking-wider backdrop-blur">{p.tag}</span>
                 <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white">{p.metric}</span>
