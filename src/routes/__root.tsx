@@ -12,6 +12,8 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FloatingActions } from "@/components/FloatingActions";
+import { useReveal } from "@/hooks/use-reveal";
+import { useRouterState } from "@tanstack/react-router";
 
 function NotFoundComponent() {
   return (
@@ -91,14 +93,41 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  useReveal();
+  // Re-run reveal observer + scroll to top on route change
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffectOnPath(pathname);
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <SiteHeader />
-      <main className="pt-24">
+      <main key={pathname} className="pt-24 animate-fade-in">
         <Outlet />
       </main>
       <SiteFooter />
       <FloatingActions />
     </QueryClientProvider>
   );
+}
+
+import { useEffect } from "react";
+function useEffectOnPath(pathname: string) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    // re-trigger reveal observer for newly mounted content
+    requestAnimationFrame(() => {
+      const els = document.querySelectorAll<HTMLElement>(".reveal:not(.in-view)");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      els.forEach((el) => io.observe(el));
+    });
+  }, [pathname]);
 }
