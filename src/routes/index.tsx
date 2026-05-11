@@ -66,27 +66,33 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
+        {/* animated background blobs */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[oklch(0.55_0.16_162/0.25)] blur-3xl animate-blob" />
+          <div className="absolute top-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-[oklch(0.62_0.24_305/0.25)] blur-3xl animate-blob delay-300" />
+        </div>
+
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-12 md:py-20 lg:grid-cols-[1.1fr_1fr]">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide">
-              <Sparkles size={14} className="text-primary" />
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide animate-fade-up">
+              <Sparkles size={14} className="text-primary animate-pulse" />
               Premium Digital Growth Agency
             </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-              Growth, <span className="text-gradient">engineered</span><br/> for ambitious brands.
+            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl animate-fade-up delay-100">
+              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>engineered</span><br/> for ambitious brands.
             </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
+            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg animate-fade-up delay-200">
               We design, build and scale the digital systems that move your business forward — websites, funnels, content and acquisition that compound.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-1px] transition">
-                Start a Project <ArrowRight size={16} />
+            <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-2px] hover:shadow-[0_20px_60px_-10px_oklch(0.62_0.24_305/0.6)] transition group">
+                Start a Project <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
               </Link>
-              <Link to="/services" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:border-primary/40 transition">
+              <Link to="/services" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:border-primary/40 hover:-translate-y-[2px] transition">
                 Explore Services
               </Link>
             </div>
-            <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
+            <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground animate-fade-up delay-500">
               <div className="flex items-center gap-1 text-primary">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
               </div>
