@@ -5,6 +5,10 @@ import {
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+import workEcommerce from "@/assets/work-ecommerce.jpg";
+import workSaas from "@/assets/work-saas.jpg";
+import workRealestate from "@/assets/work-realestate.jpg";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -37,9 +41,9 @@ const stats = [
 ];
 
 const work = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" },
+  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: workEcommerce },
+  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: workSaas },
+  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: workRealestate },
 ];
 
 const why = [
@@ -62,27 +66,33 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
+        {/* animated background blobs */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[oklch(0.55_0.16_162/0.25)] blur-3xl animate-blob" />
+          <div className="absolute top-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-[oklch(0.62_0.24_305/0.25)] blur-3xl animate-blob delay-300" />
+        </div>
+
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-12 md:py-20 lg:grid-cols-[1.1fr_1fr]">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide">
-              <Sparkles size={14} className="text-primary" />
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide animate-fade-up">
+              <Sparkles size={14} className="text-primary animate-pulse" />
               Premium Digital Growth Agency
             </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-              Growth, <span className="text-gradient">engineered</span><br/> for ambitious brands.
+            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl animate-fade-up delay-100">
+              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>engineered</span><br/> for ambitious brands.
             </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
+            <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg animate-fade-up delay-200">
               We design, build and scale the digital systems that move your business forward — websites, funnels, content and acquisition that compound.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-1px] transition">
-                Start a Project <ArrowRight size={16} />
+            <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-2px] hover:shadow-[0_20px_60px_-10px_oklch(0.62_0.24_305/0.6)] transition group">
+                Start a Project <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
               </Link>
-              <Link to="/services" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:border-primary/40 transition">
+              <Link to="/services" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:border-primary/40 hover:-translate-y-[2px] transition">
                 Explore Services
               </Link>
             </div>
-            <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
+            <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground animate-fade-up delay-500">
               <div className="flex items-center gap-1 text-primary">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
               </div>
@@ -121,21 +131,25 @@ function Home() {
 
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-5 py-20">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center reveal">
           <span className="text-xs uppercase tracking-[0.25em] text-primary">Services</span>
           <h2 className="mt-3 max-w-2xl text-4xl font-bold md:text-5xl">Complete digital solutions, <span className="text-gradient">end‑to‑end</span>.</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">From strategy to execution — every channel, every stage.</p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <div key={s.title} className="group relative rounded-2xl glass p-6 transition hover:border-primary/40 hover:-translate-y-1">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-white shadow-[var(--shadow-glow)]">
+          {services.map((s, i) => (
+            <div
+              key={s.title}
+              className="reveal group relative rounded-2xl glass p-6 transition hover:border-primary/40 hover-lift"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-white shadow-[var(--shadow-glow)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
                 <s.icon size={20} />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              <Link to="/services" className="mt-4 inline-flex items-center gap-1 text-sm text-primary opacity-0 group-hover:opacity-100 transition">
+              <Link to="/services" className="mt-4 inline-flex items-center gap-1 text-sm text-primary opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">
                 Learn more <ChevronRight size={14} />
               </Link>
             </div>
@@ -155,16 +169,21 @@ function Home() {
           </Link>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {work.map((w) => (
-            <article key={w.title} className="group overflow-hidden rounded-2xl glass">
+          {work.map((w, i) => (
+            <article
+              key={w.title}
+              className="reveal hover-lift group overflow-hidden rounded-2xl glass"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={w.img} alt={w.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <img src={w.img} alt={w.title} loading="lazy" width={1280} height={960} className="h-full w-full object-cover transition duration-[900ms] ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <span className="absolute top-4 left-4 rounded-full bg-background/70 px-3 py-1 text-[11px] uppercase tracking-wider backdrop-blur">{w.tag}</span>
-                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white">{w.metric}</span>
+                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white animate-pulse-ring">{w.metric}</span>
               </div>
-              <div className="p-5">
+              <div className="p-5 flex items-center justify-between">
                 <h3 className="text-lg font-semibold">{w.title}</h3>
+                <ChevronRight size={16} className="text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
               </div>
             </article>
           ))}
@@ -199,20 +218,15 @@ function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="mx-auto max-w-5xl px-5 py-20">
-        <div className="rounded-3xl glass p-10 md:p-14 text-center">
-          <div className="flex justify-center text-primary">
-            {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-          </div>
-          <p className="mt-6 font-display text-2xl leading-snug md:text-3xl">
-            "ProdigyPro transformed our real estate marketing completely. A 300% increase in qualified leads and a step‑change in conversion rates."
-          </p>
-          <div className="mt-6 text-sm">
-            <div className="font-semibold">Donaltha Hall</div>
-            <div className="text-muted-foreground">CEO, Epique Realty Team</div>
-          </div>
-          <Link to="/testimonials" className="mt-8 inline-flex items-center gap-1 text-sm text-primary">
+      {/* TESTIMONIAL SLIDESHOW */}
+      <section className="mx-auto max-w-5xl px-5 py-20 reveal">
+        <div className="text-center mb-10">
+          <span className="text-xs uppercase tracking-[0.25em] text-primary">Client Stories</span>
+          <h2 className="mt-3 text-4xl font-bold md:text-5xl">What partners <span className="text-gradient">say</span></h2>
+        </div>
+        <TestimonialSlider />
+        <div className="mt-8 text-center">
+          <Link to="/testimonials" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
             Read more reviews <ChevronRight size={14} />
           </Link>
         </div>
