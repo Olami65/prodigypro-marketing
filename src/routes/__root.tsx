@@ -117,8 +117,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <SiteHeader />
-      <main key={pathname} className="pt-24 animate-fade-in">
+      <main id="main-content" key={pathname} className="pt-24 animate-fade-in" tabIndex={-1}>
         <Outlet />
       </main>
       <SiteFooter />
