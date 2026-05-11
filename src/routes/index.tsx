@@ -203,20 +203,15 @@ function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="mx-auto max-w-5xl px-5 py-20">
-        <div className="rounded-3xl glass p-10 md:p-14 text-center">
-          <div className="flex justify-center text-primary">
-            {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-          </div>
-          <p className="mt-6 font-display text-2xl leading-snug md:text-3xl">
-            "ProdigyPro transformed our real estate marketing completely. A 300% increase in qualified leads and a step‑change in conversion rates."
-          </p>
-          <div className="mt-6 text-sm">
-            <div className="font-semibold">Donaltha Hall</div>
-            <div className="text-muted-foreground">CEO, Epique Realty Team</div>
-          </div>
-          <Link to="/testimonials" className="mt-8 inline-flex items-center gap-1 text-sm text-primary">
+      {/* TESTIMONIAL SLIDESHOW */}
+      <section className="mx-auto max-w-5xl px-5 py-20 reveal">
+        <div className="text-center mb-10">
+          <span className="text-xs uppercase tracking-[0.25em] text-primary">Client Stories</span>
+          <h2 className="mt-3 text-4xl font-bold md:text-5xl">What partners <span className="text-gradient">say</span></h2>
+        </div>
+        <TestimonialSlider />
+        <div className="mt-8 text-center">
+          <Link to="/testimonials" className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
             Read more reviews <ChevronRight size={14} />
           </Link>
         </div>
