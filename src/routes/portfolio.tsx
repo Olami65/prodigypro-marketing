@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { buildSeo } from "@/lib/seo";
+import workEcommerce from "@/assets/work-ecommerce.jpg";
+import workSaas from "@/assets/work-saas.jpg";
+import workRealestate from "@/assets/work-realestate.jpg";
+import workRestaurant from "@/assets/work-restaurant.jpg";
+import workFintech from "@/assets/work-fintech.jpg";
+import workYoutube from "@/assets/work-youtube.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => buildSeo({
@@ -7,18 +13,18 @@ export const Route = createFileRoute("/portfolio")({
     description: "Selected case studies and measurable outcomes from ProdigyPro engagements: +150% e‑commerce sales, +400% SaaS leads, 45% real estate close rates, +200% local foot traffic and more.",
     keywords: "marketing case studies, digital marketing portfolio, growth case studies, SaaS marketing results, real estate funnel results, e-commerce growth case study",
     path: "/portfolio",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop",
+    image: workEcommerce,
   }),
   component: Portfolio,
 });
 
 const projects = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", desc: "Complete e‑commerce transformation with re‑platform, CRO and paid acquisition.", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=700&fit=crop" },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", desc: "Multi‑channel campaign across paid, content and lifecycle.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=700&fit=crop" },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", desc: "High‑converting luxury real estate funnel and nurture sequence.", img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=700&fit=crop" },
-  { tag: "Local SEO & GMB", title: "Restaurant Chain Transformation", metric: "+200% Foot Traffic", desc: "Local SEO and GMB optimization across 24 locations.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=700&fit=crop" },
-  { tag: "Brand & Web", title: "Fintech Brand Launch", metric: "0 → 25k Users", desc: "End‑to‑end brand identity, web and acquisition for a fintech launch.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=700&fit=crop" },
-  { tag: "YouTube", title: "Creator Monetization System", metric: "+8x Channel Revenue", desc: "Channel strategy, packaging and monetization for a creator scaling past 1M subs.", img: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=900&h=700&fit=crop" },
+  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", desc: "Complete e‑commerce transformation with re‑platform, CRO and paid acquisition.", img: workEcommerce },
+  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", desc: "Multi‑channel campaign across paid, content and lifecycle.", img: workSaas },
+  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", desc: "High‑converting luxury real estate funnel and nurture sequence.", img: workRealestate },
+  { tag: "Local SEO & GMB", title: "Restaurant Chain Transformation", metric: "+200% Foot Traffic", desc: "Local SEO and GMB optimization across 24 locations.", img: workRestaurant },
+  { tag: "Brand & Web", title: "Fintech Brand Launch", metric: "0 → 25k Users", desc: "End‑to‑end brand identity, web and acquisition for a fintech launch.", img: workFintech },
+  { tag: "YouTube", title: "Creator Monetization System", metric: "+8x Channel Revenue", desc: "Channel strategy, packaging and monetization for a creator scaling past 1M subs.", img: workYoutube },
 ];
 
 function Portfolio() {
