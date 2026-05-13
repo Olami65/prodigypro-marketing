@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/components/BookCallButton";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -46,10 +47,10 @@ export function SiteHeader() {
           }`}
         >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center">
-              <div className="w-8 h-8 rounded-md bg-background flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-gradient-brand" />
+          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="ProdigyPro Marketing — Home">
+            <div className="relative w-11 h-11 rounded-lg bg-gradient-brand p-[2px]">
+              <div className="w-full h-full rounded-[7px] bg-background flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="ProdigyPro Marketing logo" className="w-9 h-9 object-contain" />
               </div>
             </div>
             <div className="hidden sm:flex flex-col leading-none">
