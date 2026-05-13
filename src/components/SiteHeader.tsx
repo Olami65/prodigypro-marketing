@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/components/BookCallButton";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
