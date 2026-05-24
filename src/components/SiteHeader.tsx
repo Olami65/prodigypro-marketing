@@ -164,7 +164,7 @@ export function SiteHeader() {
         {open && (
           <div
             id="mobile-nav"
-            className="xl:hidden mt-3 rounded-2xl glass border border-white/10 animate-fade-up"
+            className="xl:hidden mt-3 rounded-2xl bg-background/90 backdrop-blur-xl border border-white/10 animate-fade-up"
           >
             <div className="px-5 py-4 flex flex-col gap-1">
               {nav.map((n) => (
