@@ -1,69 +1,69 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight, Check } from "lucide-react";
 import { buildSeo } from "@/lib/seo";
-import workEcommerce from "@/assets/work-ecommerce.jpg";
-import workSaas from "@/assets/work-saas.jpg";
-import workRealestate from "@/assets/work-realestate.jpg";
-import workRestaurant from "@/assets/work-restaurant.jpg";
-import workFintech from "@/assets/work-fintech.jpg";
-import workYoutube from "@/assets/work-youtube.jpg";
+import { BookCallButton } from "@/components/BookCallButton";
+import crmImage from "@/assets/portfolio-crm.jpg";
+import ghlImage from "@/assets/portfolio-gohighlevel.jpg";
+import aiImage from "@/assets/portfolio-ai-agent.jpg";
+import conversionImage from "@/assets/portfolio-conversion.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => buildSeo({
-    title: "Portfolio & Case Studies — ProdigyPro Marketing",
-    description: "Selected case studies and measurable outcomes from ProdigyPro engagements: +150% e‑commerce sales, +400% SaaS leads, 45% real estate close rates, +200% local foot traffic and more.",
-    keywords: "marketing case studies, digital marketing portfolio, growth case studies, SaaS marketing results, real estate funnel results, e-commerce growth case study",
+    title: "Automation & Growth Case Studies | ProdigyPro",
+    description: "Explore CRM automation, GoHighLevel, AI agent and conversion system engagements designed to improve lead response, bookings, pipeline visibility and revenue.",
+    keywords: "CRM automation case studies, GoHighLevel portfolio, AI chatbot case study, marketing automation results, growth systems agency",
     path: "/portfolio",
-    image: workEcommerce,
+    image: crmImage,
   }),
   component: Portfolio,
 });
 
 const projects = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", desc: "Complete e‑commerce transformation with re‑platform, CRO and paid acquisition.", img: workEcommerce },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", desc: "Multi‑channel campaign across paid, content and lifecycle.", img: workSaas },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", desc: "High‑converting luxury real estate funnel and nurture sequence.", img: workRealestate },
-  { tag: "Local SEO & GMB", title: "Restaurant Chain Transformation", metric: "+200% Foot Traffic", desc: "Local SEO and GMB optimization across 24 locations.", img: workRestaurant },
-  { tag: "Brand & Web", title: "Fintech Brand Launch", metric: "0 → 25k Users", desc: "End‑to‑end brand identity, web and acquisition for a fintech launch.", img: workFintech },
-  { tag: "YouTube", title: "Creator Monetization System", metric: "+8x Channel Revenue", desc: "Channel strategy, packaging and monetization for a creator scaling past 1M subs.", img: workYoutube },
+  { tag: "CRM Automation", title: "Multi-location service pipeline", metric: "3.4× Faster Response", desc: "A unified CRM, routing logic and nurture system designed to move inquiries from first contact to booked appointment.", img: crmImage, deliverables: ["Pipeline rebuild", "Lead routing", "SMS nurture"] },
+  { tag: "GoHighLevel", title: "Always-on appointment engine", metric: "+186% Bookings", desc: "A complete GoHighLevel implementation connecting landing pages, calendars, missed-call workflows and sales reporting.", img: ghlImage, deliverables: ["GHL architecture", "Automations", "Attribution"] },
+  { tag: "AI Agent", title: "24/7 qualification assistant", metric: "71% Self-served", desc: "An AI chat experience trained around service criteria, qualification rules and seamless handoff to the sales team.", img: aiImage, deliverables: ["Knowledge design", "Qualification", "Human handoff"] },
+  { tag: "Growth System", title: "Revenue visibility rebuild", metric: "+42% Conversion", desc: "A conversion-led website, campaign tracking and executive dashboard working as one measurable acquisition system.", img: conversionImage, deliverables: ["CRO strategy", "Tracking", "Dashboards"] },
 ];
 
 function Portfolio() {
   return (
     <>
-      <section className="mx-auto max-w-5xl px-5 py-20 text-center">
-        <span className="text-xs uppercase tracking-[0.25em] text-primary">Portfolio</span>
-        <h1 className="mt-3 font-display text-5xl font-bold md:text-6xl">Work we're <span className="text-gradient">proud</span> of.</h1>
-        <p className="mx-auto mt-6 max-w-2xl text-muted-foreground md:text-lg">
-          A snapshot of recent engagements across SaaS, real estate, e‑commerce, local services and the creator economy.
-        </p>
+      <section className="section-frame page-intro text-center">
+        <span className="eyebrow">Selected systems</span>
+        <h1 className="mx-auto mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">Built to make growth <span className="text-gradient">visible.</span></h1>
+        <p className="mx-auto mt-6 max-w-2xl text-muted-foreground md:text-lg">A focused look at the CRM, automation, AI and conversion systems we design for ambitious service businesses.</p>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pb-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
-            <article
-              key={p.title}
-              className="reveal hover-lift group overflow-hidden rounded-2xl glass"
-              style={{ transitionDelay: `${i * 90}ms` }}
-            >
+      <section className="section-frame pb-24">
+        <div className="grid gap-6 lg:grid-cols-2">
+          {projects.map((project, index) => (
+            <article key={project.title} className="portfolio-card reveal group" style={{ transitionDelay: `${index * 80}ms` }}>
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.title} loading="lazy" width={1280} height={960} className="h-full w-full object-cover transition duration-[900ms] ease-out group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <span className="absolute top-4 left-4 rounded-full bg-background/70 px-3 py-1 text-[11px] uppercase tracking-wider backdrop-blur">{p.tag}</span>
-                <span className="absolute top-4 right-4 rounded-full bg-gradient-brand px-3 py-1 text-[11px] font-semibold text-white">{p.metric}</span>
+                <img src={project.img} alt={`${project.title} automation system in use`} loading="lazy" width={1408} height={1056} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                <div className="absolute inset-x-4 top-4 flex items-start justify-between gap-3">
+                  <span className="case-label">{project.tag}</span>
+                  <span className="case-metric">{project.metric}</span>
+                </div>
               </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+              <div className="p-6 md:p-8">
+                <div className="flex items-start justify-between gap-4"><h2 className="text-2xl font-bold">{project.title}</h2><ArrowUpRight className="shrink-0 text-accent transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true" /></div>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.desc}</p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {project.deliverables.map((item) => <li key={item} className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground"><Check size={12} className="text-accent" aria-hidden="true" />{item}</li>)}
+                </ul>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-5 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Your story could be next.</h2>
-        <Link to="/contact" className="mt-6 inline-flex rounded-full bg-gradient-brand px-7 py-3 text-sm font-semibold text-white">Start a project</Link>
+      <section className="section-frame pb-12 text-center">
+        <div className="cta-panel px-6 py-14 md:px-12">
+          <span className="eyebrow">Your system, next</span>
+          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-bold md:text-5xl">Let’s turn your growth process into an advantage.</h2>
+          <div className="mt-7"><BookCallButton label="Discuss Your Project" /></div>
+        </div>
       </section>
     </>
   );
