@@ -30,7 +30,7 @@ function Portfolio() {
     <>
       <section className="section-frame page-intro text-center">
         <span className="eyebrow">Selected systems</span>
-        <h1 className="mx-auto mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">Built to make growth <span className="text-gradient">visible.</span></h1>
+        <h1 className="mx-auto mt-4 max-w-4xl font-display text-4xl font-bold leading-tight sm:text-5xl md:text-7xl">Built to make growth <span className="text-gradient">visible.</span></h1>
         <p className="mx-auto mt-6 max-w-2xl text-muted-foreground md:text-lg">A focused look at the CRM, automation, AI and conversion systems we design for ambitious service businesses.</p>
       </section>
 
@@ -61,7 +61,7 @@ function Portfolio() {
       <section className="section-frame pb-12 text-center">
         <div className="cta-panel px-6 py-14 md:px-12">
           <span className="eyebrow">Your system, next</span>
-          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-bold md:text-5xl">Let’s turn your growth process into an advantage.</h2>
+          <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-bold sm:text-3xl md:text-5xl">Let’s turn your growth process into an advantage.</h2>
           <div className="mt-7"><BookCallButton label="Discuss Your Project" /></div>
         </div>
       </section>

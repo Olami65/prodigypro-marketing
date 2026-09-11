@@ -2,37 +2,69 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, Sparkles, Rocket, BarChart3, Globe, Megaphone,
   Target, Youtube, MapPin, Check, Star, ChevronRight,
+  Bot, DatabaseZap, Settings2,
 } from "lucide-react";
+
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
-import workEcommerce from "@/assets/work-ecommerce.jpg";
-import workSaas from "@/assets/work-saas.jpg";
-import workRealestate from "@/assets/work-realestate.jpg";
+import workCrm from "@/assets/portfolio-crm.jpg";
+import workGhl from "@/assets/portfolio-gohighlevel.jpg";
+import workAi from "@/assets/portfolio-ai-agent.jpg";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { BookCallButton } from "@/components/BookCallButton";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => buildSeo({
-    title: "ProdigyPro Marketing — Premium Digital Growth Agency",
-    description: "Premium digital marketing agency engineering measurable growth for ambitious brands. Websites, funnels, SEO, lead generation, social media and brand strategy that compound.",
-    keywords: "digital marketing agency, premium marketing agency, sales funnels, SEO, lead generation, website development, social media marketing, GMB optimization, YouTube monetization, brand strategy",
+    title: "CRM Automation, GoHighLevel & AI Agents | ProdigyPro",
+    description: "Premium automation-led marketing agency. We build CRM automation, GoHighLevel systems and AI agents that capture, qualify, nurture and book every lead.",
+    keywords: "CRM automation agency, GoHighLevel expert, AI chatbot agency, AI sales agent, marketing automation, lead generation, sales funnels, SEO, conversion websites",
     path: "/",
+
     image: hero,
   }),
   component: Home,
 });
 
-const services = [
-  { icon: Megaphone, title: "Digital Marketing", desc: "Full‑funnel strategies that compound month over month." },
-  { icon: Globe, title: "Website Development", desc: "High‑converting, performance‑obsessed websites." },
-  { icon: Target, title: "Sales Funnels", desc: "Engineered journeys that turn clicks into customers." },
-  { icon: Sparkles, title: "Social Media", desc: "Brand‑forward content that earns attention and trust." },
-  { icon: Rocket, title: "Lead Generation", desc: "Predictable pipelines built on proven frameworks." },
-  { icon: Youtube, title: "YouTube Monetization", desc: "Grow your channel into a sustainable revenue engine." },
-  { icon: MapPin, title: "GMB & Local SEO", desc: "Dominate the map pack and local intent searches." },
-  { icon: BarChart3, title: "Analytics & CRO", desc: "Decisions backed by data, not guesswork." },
+const flagship = [
+  {
+    icon: DatabaseZap,
+    title: "CRM Automation",
+    desc: "Every lead captured, scored, routed and followed up automatically — no more opportunities lost in an inbox.",
+    points: ["Pipeline architecture", "Lead routing & scoring", "Email + SMS nurture"],
+  },
+  {
+    icon: Settings2,
+    title: "GoHighLevel Systems",
+    desc: "A GoHighLevel workspace built around your real sales process: funnels, calendars, workflows and reporting.",
+    points: ["Account architecture", "Funnels & calendars", "Dashboards & attribution"],
+  },
+  {
+    icon: Bot,
+    title: "AI Agents & Chatbots",
+    desc: "On-brand AI that answers, qualifies, recovers missed calls and books appointments around the clock.",
+    points: ["Website & social chat", "Lead qualification", "Human handoff logic"],
+  },
 ];
+
+const systemFlow = [
+  { step: "01", title: "Capture", desc: "Ads, SEO, funnels and forms feed every lead into one place." },
+  { step: "02", title: "Qualify", desc: "AI agents respond instantly and score intent before your team steps in." },
+  { step: "03", title: "Nurture", desc: "Automated email and SMS sequences keep prospects warm until they're ready." },
+  { step: "04", title: "Book & Report", desc: "Calendars fill automatically and dashboards show what actually drives revenue." },
+];
+
+const services = [
+  { icon: Globe, title: "Conversion Websites", desc: "Fast, persuasive sites wired straight into your CRM." },
+  { icon: Target, title: "Sales Funnels", desc: "Engineered journeys that turn clicks into booked calls." },
+  { icon: Megaphone, title: "Paid Growth", desc: "Intent-led campaigns with clean click-to-close attribution." },
+  { icon: MapPin, title: "SEO & Local Visibility", desc: "Own the map pack and high-intent organic search." },
+  { icon: Sparkles, title: "Lifecycle Marketing", desc: "Onboarding, retention, reactivation and referral programs." },
+  { icon: Rocket, title: "Lead Generation", desc: "Predictable pipeline built on proven frameworks." },
+  { icon: Youtube, title: "YouTube Monetization", desc: "Turn your channel into a sustainable revenue engine." },
+  { icon: BarChart3, title: "Analytics & CRO", desc: "Dashboards and experiments that sharpen every decision." },
+];
+
 
 const stats = [
   { v: "500+", l: "Projects Delivered" },
@@ -42,9 +74,9 @@ const stats = [
 ];
 
 const work = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: workEcommerce },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: workSaas },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: workRealestate },
+  { tag: "CRM Automation", title: "Multi-location service pipeline", metric: "3.4× Faster Response", img: workCrm },
+  { tag: "GoHighLevel", title: "Always-on appointment engine", metric: "+186% Bookings", img: workGhl },
+  { tag: "AI Agent", title: "24/7 qualification assistant", metric: "71% Self-served", img: workAi },
 ];
 
 const why = [
@@ -77,14 +109,15 @@ function Home() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide animate-fade-up">
               <Sparkles size={14} className="text-primary animate-pulse" />
-              Premium Digital Growth Agency
+              CRM Automation · GoHighLevel · AI Agents
             </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl animate-fade-up delay-100">
-              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>engineered</span><br/> for ambitious brands.
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up delay-100">
+              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>automated</span><br className="hidden sm:block" /> end to end.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg animate-fade-up delay-200">
-              We design, build and scale the digital systems that move your business forward — websites, funnels, content and acquisition that compound.
+              We build the CRM automation, GoHighLevel systems and AI agents that capture every lead, follow up instantly and fill your calendar — while your team focuses on closing.
             </p>
+
             <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-2px] hover:shadow-[0_20px_60px_-10px_oklch(0.62_0.24_305/0.6)] transition group">
                 Start a Project <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
@@ -130,13 +163,65 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-5 py-20">
+      {/* CORE AUTOMATION SERVICES */}
+      <section className="section-frame py-16 md:py-20" aria-labelledby="core-services">
+        <div className="section-heading reveal">
+          <div className="min-w-0">
+            <span className="eyebrow">Core expertise</span>
+            <h2 id="core-services" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
+              Automation that <span className="text-gradient">runs your growth</span>.
+            </h2>
+          </div>
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            CRM automation, GoHighLevel and AI agents work together so every lead is answered fast, followed up consistently and booked without manual admin.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {flagship.map((s, i) => (
+            <article key={s.title} className="premium-card reveal p-6 md:p-8" style={{ transitionDelay: `${i * 90}ms` }}>
+              <span className="service-icon"><s.icon size={22} aria-hidden="true" /></span>
+              <h3 className="mt-6 text-xl font-bold sm:text-2xl">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <ul className="mt-5 space-y-2.5">
+                {s.points.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-sm"><Check size={15} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />{p}</li>
+                ))}
+              </ul>
+              <Link to="/services" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline">
+                Explore this service <ChevronRight size={14} aria-hidden="true" />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* GROWTH OPERATING SYSTEM */}
+      <section className="section-band py-16 md:py-20" aria-labelledby="growth-os">
+        <div className="section-frame">
+          <div className="reveal text-center">
+            <span className="eyebrow">The growth operating system</span>
+            <h2 id="growth-os" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">From first click to booked call.</h2>
+          </div>
+          <ol className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {systemFlow.map((item) => (
+              <li key={item.step} className="bg-background p-6 md:p-7">
+                <span className="font-display text-sm font-bold text-accent">{item.step}</span>
+                <h3 className="mt-3 text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* SUPPORTING SERVICES */}
+      <section className="section-frame py-16 md:py-20">
         <div className="flex flex-col items-center text-center reveal">
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Services</span>
-          <h2 className="mt-3 max-w-2xl text-4xl font-bold md:text-5xl">Complete digital solutions, <span className="text-gradient">end‑to‑end</span>.</h2>
+          <span className="eyebrow">Supporting capabilities</span>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl md:text-5xl">Everything around the <span className="text-gradient">engine</span>.</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">From strategy to execution — every channel, every stage.</p>
         </div>
+
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
