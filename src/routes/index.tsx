@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, Sparkles, Rocket, BarChart3, Globe, Megaphone,
   Target, Youtube, MapPin, Check, Star, ChevronRight,
+  Bot, DatabaseZap, Settings2,
 } from "lucide-react";
+
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 import workEcommerce from "@/assets/work-ecommerce.jpg";
