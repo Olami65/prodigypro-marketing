@@ -23,16 +23,45 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const services = [
-  { icon: Megaphone, title: "Digital Marketing", desc: "Full‑funnel strategies that compound month over month." },
-  { icon: Globe, title: "Website Development", desc: "High‑converting, performance‑obsessed websites." },
-  { icon: Target, title: "Sales Funnels", desc: "Engineered journeys that turn clicks into customers." },
-  { icon: Sparkles, title: "Social Media", desc: "Brand‑forward content that earns attention and trust." },
-  { icon: Rocket, title: "Lead Generation", desc: "Predictable pipelines built on proven frameworks." },
-  { icon: Youtube, title: "YouTube Monetization", desc: "Grow your channel into a sustainable revenue engine." },
-  { icon: MapPin, title: "GMB & Local SEO", desc: "Dominate the map pack and local intent searches." },
-  { icon: BarChart3, title: "Analytics & CRO", desc: "Decisions backed by data, not guesswork." },
+const flagship = [
+  {
+    icon: DatabaseZap,
+    title: "CRM Automation",
+    desc: "Every lead captured, scored, routed and followed up automatically — no more opportunities lost in an inbox.",
+    points: ["Pipeline architecture", "Lead routing & scoring", "Email + SMS nurture"],
+  },
+  {
+    icon: Settings2,
+    title: "GoHighLevel Systems",
+    desc: "A GoHighLevel workspace built around your real sales process: funnels, calendars, workflows and reporting.",
+    points: ["Account architecture", "Funnels & calendars", "Dashboards & attribution"],
+  },
+  {
+    icon: Bot,
+    title: "AI Agents & Chatbots",
+    desc: "On-brand AI that answers, qualifies, recovers missed calls and books appointments around the clock.",
+    points: ["Website & social chat", "Lead qualification", "Human handoff logic"],
+  },
 ];
+
+const systemFlow = [
+  { step: "01", title: "Capture", desc: "Ads, SEO, funnels and forms feed every lead into one place." },
+  { step: "02", title: "Qualify", desc: "AI agents respond instantly and score intent before your team steps in." },
+  { step: "03", title: "Nurture", desc: "Automated email and SMS sequences keep prospects warm until they're ready." },
+  { step: "04", title: "Book & Report", desc: "Calendars fill automatically and dashboards show what actually drives revenue." },
+];
+
+const services = [
+  { icon: Globe, title: "Conversion Websites", desc: "Fast, persuasive sites wired straight into your CRM." },
+  { icon: Target, title: "Sales Funnels", desc: "Engineered journeys that turn clicks into booked calls." },
+  { icon: Megaphone, title: "Paid Growth", desc: "Intent-led campaigns with clean click-to-close attribution." },
+  { icon: MapPin, title: "SEO & Local Visibility", desc: "Own the map pack and high-intent organic search." },
+  { icon: Sparkles, title: "Lifecycle Marketing", desc: "Onboarding, retention, reactivation and referral programs." },
+  { icon: Rocket, title: "Lead Generation", desc: "Predictable pipeline built on proven frameworks." },
+  { icon: Youtube, title: "YouTube Monetization", desc: "Turn your channel into a sustainable revenue engine." },
+  { icon: BarChart3, title: "Analytics & CRO", desc: "Dashboards and experiments that sharpen every decision." },
+];
+
 
 const stats = [
   { v: "500+", l: "Projects Delivered" },
