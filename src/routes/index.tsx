@@ -109,14 +109,15 @@ function Home() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium tracking-wide animate-fade-up">
               <Sparkles size={14} className="text-primary animate-pulse" />
-              Premium Digital Growth Agency
+              CRM Automation · GoHighLevel · AI Agents
             </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl animate-fade-up delay-100">
-              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>engineered</span><br/> for ambitious brands.
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up delay-100">
+              Growth, <span className="text-gradient animate-gradient bg-clip-text" style={{ backgroundImage: "var(--gradient-text)" }}>automated</span><br className="hidden sm:block" /> end to end.
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg animate-fade-up delay-200">
-              We design, build and scale the digital systems that move your business forward — websites, funnels, content and acquisition that compound.
+              We build the CRM automation, GoHighLevel systems and AI agents that capture every lead, follow up instantly and fill your calendar — while your team focuses on closing.
             </p>
+
             <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:translate-y-[-2px] hover:shadow-[0_20px_60px_-10px_oklch(0.62_0.24_305/0.6)] transition group">
                 Start a Project <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
