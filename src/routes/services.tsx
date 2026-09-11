@@ -59,6 +59,15 @@ const process = [
   { step: "04", title: "Optimize", desc: "We monitor the numbers, refine weak points and expand what produces measurable growth." },
 ];
 
+const faqs = [
+  { q: "How long does a CRM or GoHighLevel build take?", a: "Most core builds go live in 3–6 weeks depending on the number of pipelines, integrations and automations involved. We share a clear timeline after the audit." },
+  { q: "Can you work with our existing CRM?", a: "Yes. We regularly build on GoHighLevel, but we also automate and optimize HubSpot, Pipedrive, Zoho and custom stacks." },
+  { q: "Will the AI agent sound like our brand?", a: "Every agent is trained on your services, tone, qualification criteria and objection handling, with clean handoff rules to your human team." },
+  { q: "Do you train our team on the system?", a: "Always. Handover includes documentation, recorded walkthroughs and a live training session so your team owns the system with confidence." },
+  { q: "What does an engagement cost?", a: "Projects typically start at $1,000, with ongoing optimization retainers scoped to the size of your pipeline and channel mix." },
+];
+
+
 function Services() {
   return (
     <>
