@@ -16,10 +16,11 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => buildSeo({
-    title: "ProdigyPro Marketing — Premium Digital Growth Agency",
-    description: "Premium digital marketing agency engineering measurable growth for ambitious brands. Websites, funnels, SEO, lead generation, social media and brand strategy that compound.",
-    keywords: "digital marketing agency, premium marketing agency, sales funnels, SEO, lead generation, website development, social media marketing, GMB optimization, YouTube monetization, brand strategy",
+    title: "CRM Automation, GoHighLevel & AI Agents | ProdigyPro",
+    description: "Premium automation-led marketing agency. We build CRM automation, GoHighLevel systems and AI agents that capture, qualify, nurture and book every lead.",
+    keywords: "CRM automation agency, GoHighLevel expert, AI chatbot agency, AI sales agent, marketing automation, lead generation, sales funnels, SEO, conversion websites",
     path: "/",
+
     image: hero,
   }),
   component: Home,

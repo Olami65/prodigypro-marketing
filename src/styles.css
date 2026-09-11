@@ -352,3 +352,7 @@
   .contact-dock-button::after { animation: none; }
   .premium-card, .portfolio-card, .button-secondary { transition: none; }
 }
+
+/* Space for the fixed contact dock */
+body { padding-bottom: 5.25rem; }
+@media (min-width: 640px) { body { padding-bottom: 6rem; } }
