@@ -136,6 +136,27 @@ function Services() {
         </div>
       </section>
 
+      <section className="section-band py-20" aria-labelledby="services-faq">
+        <div className="section-frame max-w-3xl">
+          <div className="reveal text-center">
+            <span className="eyebrow">Common questions</span>
+            <h2 id="services-faq" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">What working together looks like.</h2>
+          </div>
+          <div className="mt-10 space-y-3">
+            {faqs.map((f) => (
+              <details key={f.q} className="group rounded-2xl border border-border bg-background/70 p-5 md:p-6 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-left font-semibold">
+                  <span className="min-w-0">{f.q}</span>
+                  <Sparkles size={16} className="shrink-0 text-accent transition group-open:rotate-90" aria-hidden="true" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="section-frame pb-12 text-center">
         <div className="cta-panel px-6 py-14 md:px-12 md:py-16">
           <Sparkles className="mx-auto text-accent" aria-hidden="true" />
