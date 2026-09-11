@@ -7,9 +7,9 @@ import {
 
 import hero from "@/assets/hero.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
-import workEcommerce from "@/assets/work-ecommerce.jpg";
-import workSaas from "@/assets/work-saas.jpg";
-import workRealestate from "@/assets/work-realestate.jpg";
+import workCrm from "@/assets/portfolio-crm.jpg";
+import workGhl from "@/assets/portfolio-gohighlevel.jpg";
+import workAi from "@/assets/portfolio-ai-agent.jpg";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { BookCallButton } from "@/components/BookCallButton";
 import { buildSeo } from "@/lib/seo";
@@ -74,9 +74,9 @@ const stats = [
 ];
 
 const work = [
-  { tag: "Web Development", title: "E‑commerce Platform Revolution", metric: "+150% Sales", img: workEcommerce },
-  { tag: "Digital Marketing", title: "SaaS Growth Campaign", metric: "+400% Leads", img: workSaas },
-  { tag: "Sales Funnel", title: "Real Estate Conversion Funnel", metric: "45% Close Rate", img: workRealestate },
+  { tag: "CRM Automation", title: "Multi-location service pipeline", metric: "3.4× Faster Response", img: workCrm },
+  { tag: "GoHighLevel", title: "Always-on appointment engine", metric: "+186% Bookings", img: workGhl },
+  { tag: "AI Agent", title: "24/7 qualification assistant", metric: "71% Self-served", img: workAi },
 ];
 
 const why = [

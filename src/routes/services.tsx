@@ -64,7 +64,7 @@ function Services() {
     <>
       <section className="section-frame page-intro text-center">
         <span className="eyebrow">Automation-led growth services</span>
-        <h1 className="mx-auto mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
+        <h1 className="mx-auto mt-4 max-w-4xl font-display text-4xl font-bold leading-tight sm:text-5xl md:text-7xl">
           Build the system that <span className="text-gradient">runs your growth.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -76,7 +76,7 @@ function Services() {
         <div className="section-heading reveal">
           <div>
             <span className="eyebrow">Core expertise</span>
-            <h2 id="flagship-services" className="mt-3 text-4xl font-bold md:text-5xl">Your growth infrastructure.</h2>
+            <h2 id="flagship-services" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Your growth infrastructure.</h2>
           </div>
           <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">Strategy and implementation live together. We design the system, build every workflow and make sure it works in the real world.</p>
         </div>
@@ -104,7 +104,7 @@ function Services() {
         <div className="section-frame">
           <div className="text-center reveal">
             <span className="eyebrow">Supporting capabilities</span>
-            <h2 id="supporting-services" className="mt-3 text-4xl font-bold md:text-5xl">Everything around the engine.</h2>
+            <h2 id="supporting-services" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Everything around the engine.</h2>
           </div>
           <div className="mt-12 grid gap-x-10 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
             {supporting.map((service) => (
@@ -121,7 +121,7 @@ function Services() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="reveal">
             <span className="eyebrow">How we work</span>
-            <h2 id="process-heading" className="mt-3 text-4xl font-bold md:text-5xl">From bottleneck to operating system.</h2>
+            <h2 id="process-heading" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">From bottleneck to operating system.</h2>
             <p className="mt-5 text-muted-foreground">A disciplined process keeps the work commercially grounded and your team clear on what happens next.</p>
           </div>
           <ol className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
@@ -139,7 +139,7 @@ function Services() {
       <section className="section-frame pb-12 text-center">
         <div className="cta-panel px-6 py-14 md:px-12 md:py-16">
           <Sparkles className="mx-auto text-accent" aria-hidden="true" />
-          <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold md:text-5xl">Your next lead should never disappear into a spreadsheet.</h2>
+          <h2 className="mx-auto mt-5 max-w-2xl text-2xl font-bold sm:text-3xl md:text-5xl">Your next lead should never disappear into a spreadsheet.</h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Book a free 30-minute strategy call. We’ll identify the highest-value automation opportunity in your current process.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <BookCallButton label="Book a Free Strategy Call" />
