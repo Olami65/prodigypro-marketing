@@ -161,13 +161,65 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-5 py-20">
+      {/* CORE AUTOMATION SERVICES */}
+      <section className="section-frame py-16 md:py-20" aria-labelledby="core-services">
+        <div className="section-heading reveal">
+          <div className="min-w-0">
+            <span className="eyebrow">Core expertise</span>
+            <h2 id="core-services" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
+              Automation that <span className="text-gradient">runs your growth</span>.
+            </h2>
+          </div>
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            CRM automation, GoHighLevel and AI agents work together so every lead is answered fast, followed up consistently and booked without manual admin.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {flagship.map((s, i) => (
+            <article key={s.title} className="premium-card reveal p-6 md:p-8" style={{ transitionDelay: `${i * 90}ms` }}>
+              <span className="service-icon"><s.icon size={22} aria-hidden="true" /></span>
+              <h3 className="mt-6 text-xl font-bold sm:text-2xl">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <ul className="mt-5 space-y-2.5">
+                {s.points.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 text-sm"><Check size={15} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />{p}</li>
+                ))}
+              </ul>
+              <Link to="/services" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline">
+                Explore this service <ChevronRight size={14} aria-hidden="true" />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* GROWTH OPERATING SYSTEM */}
+      <section className="section-band py-16 md:py-20" aria-labelledby="growth-os">
+        <div className="section-frame">
+          <div className="reveal text-center">
+            <span className="eyebrow">The growth operating system</span>
+            <h2 id="growth-os" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">From first click to booked call.</h2>
+          </div>
+          <ol className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {systemFlow.map((item) => (
+              <li key={item.step} className="bg-background p-6 md:p-7">
+                <span className="font-display text-sm font-bold text-accent">{item.step}</span>
+                <h3 className="mt-3 text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* SUPPORTING SERVICES */}
+      <section className="section-frame py-16 md:py-20">
         <div className="flex flex-col items-center text-center reveal">
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Services</span>
-          <h2 className="mt-3 max-w-2xl text-4xl font-bold md:text-5xl">Complete digital solutions, <span className="text-gradient">end‑to‑end</span>.</h2>
+          <span className="eyebrow">Supporting capabilities</span>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl md:text-5xl">Everything around the <span className="text-gradient">engine</span>.</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">From strategy to execution — every channel, every stage.</p>
         </div>
+
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
