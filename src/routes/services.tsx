@@ -59,6 +59,39 @@ const process = [
   { step: "04", title: "Optimize", desc: "We monitor the numbers, refine weak points and expand what produces measurable growth." },
 ];
 
+const packages = [
+  {
+    icon: Target,
+    name: "Automation Sprint",
+    price: "From $1,000",
+    best: "Best for one high-impact fix",
+    desc: "A focused 2–3 week build to solve the single biggest leak in your lead flow.",
+    includes: ["Growth & pipeline audit", "One CRM or funnel build", "Lead capture + instant follow-up", "Team walkthrough & docs"],
+  },
+  {
+    icon: Settings2,
+    name: "Growth System",
+    price: "From $2,800",
+    best: "Most popular",
+    desc: "The full operating system: CRM, funnels, automations, AI agent and reporting connected end to end.",
+    includes: ["Full GoHighLevel/CRM build", "Funnels, calendars, workflows", "AI agent or chatbot", "Attribution dashboards", "30 days post-launch support"],
+    featured: true,
+  },
+  {
+    icon: Gauge,
+    name: "Managed Growth",
+    price: "From $1,500/mo",
+    best: "Best for ongoing scale",
+    desc: "We run, optimize and expand your system while you focus on selling.",
+    includes: ["Continuous optimization", "Campaign & funnel iteration", "AI agent tuning", "Monthly reporting call", "Priority support"],
+  },
+];
+
+const platforms = [
+  "GoHighLevel", "HubSpot", "Pipedrive", "Zoho", "Salesforce", "Make", "Zapier", "n8n",
+  "Twilio", "Stripe", "Calendly", "Google Ads", "Meta Ads", "GA4", "Slack", "Shopify",
+];
+
 const faqs = [
   { q: "How long does a CRM or GoHighLevel build take?", a: "Most core builds go live in 3–6 weeks depending on the number of pipelines, integrations and automations involved. We share a clear timeline after the audit." },
   { q: "Can you work with our existing CRM?", a: "Yes. We regularly build on GoHighLevel, but we also automate and optimize HubSpot, Pipedrive, Zoho and custom stacks." },
@@ -142,6 +175,61 @@ function Services() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="section-band py-24" aria-labelledby="packages-heading">
+        <div className="section-frame">
+          <div className="reveal text-center">
+            <span className="eyebrow">Engagement models</span>
+            <h2 id="packages-heading" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Pick the level of build you need.</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Every engagement starts with an audit, so scope and pricing are confirmed before a single workflow is built.</p>
+          </div>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {packages.map((p, i) => (
+              <article
+                key={p.name}
+                className={`premium-card reveal flex flex-col p-7 md:p-8 ${p.featured ? "border-accent/50" : ""}`}
+                style={{ transitionDelay: `${i * 90}ms` }}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="service-icon"><p.icon size={22} aria-hidden="true" /></span>
+                  <span className="case-label">{p.best}</span>
+                </div>
+                <h3 className="mt-7 text-2xl font-bold">{p.name}</h3>
+                <p className="mt-2 font-display text-lg font-semibold text-accent">{p.price}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                <ul className="mt-6 space-y-3">
+                  {p.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm">
+                      <Check size={15} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />{item}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/contact" className="button-secondary mt-8 self-start">Request a quote</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-frame py-20" aria-labelledby="platforms-heading">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="reveal">
+            <span className="eyebrow">Tools & integrations</span>
+            <h2 id="platforms-heading" className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Connected to the stack you already run.</h2>
+            <p className="mt-5 text-muted-foreground">
+              We integrate your CRM, ads, calendars, payments and messaging so data flows in one direction and reporting finally matches reality.
+            </p>
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-accent">
+              <Braces size={16} aria-hidden="true" /> Custom API work available where off-the-shelf falls short.
+            </p>
+          </div>
+          <ul className="reveal flex flex-wrap gap-2.5">
+            {platforms.map((name) => (
+              <li key={name} className="rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium">{name}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
