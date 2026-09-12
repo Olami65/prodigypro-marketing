@@ -72,7 +72,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5">
                 <Phone size={15} className="mt-0.5 text-primary" />
-                <a href="tel:+12674976688" className="hover:text-foreground">+1 (267) 497‑6688</a>
+                <a href="tel:+15797964824" className="hover:text-foreground">+1 (579) 796-4824</a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={15} className="mt-0.5 text-primary" />

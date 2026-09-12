@@ -7,7 +7,7 @@ import { buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () => buildSeo({
     title: "Contact ProdigyPro — Start a Growth Project Today",
-    description: "Talk to ProdigyPro Marketing. Call +1 (267) 497‑6688, email support@prodigypro-marketing.com or send us a message — we respond within one business day with next steps.",
+    description: "Talk to ProdigyPro Marketing. Call +1 (579) 796-4824, email support@prodigypro-marketing.com or send us a message — we respond within one business day with next steps.",
     keywords: "contact ProdigyPro, hire digital marketing agency, marketing agency contact, growth agency consultation, book strategy call",
     path: "/contact",
   }),
@@ -35,11 +35,11 @@ function Contact() {
             <p className="mt-2 text-sm text-muted-foreground">Prefer to skip the form? Use any of these.</p>
 
             <div className="mt-8 space-y-5">
-              <a href="tel:+12674976688" className="flex items-start gap-4 group">
+              <a href="tel:+15797964824" className="flex items-start gap-4 group">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-white"><Phone size={18} /></div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone</div>
-                  <div className="font-semibold group-hover:text-primary transition">+1 (267) 497‑6688</div>
+                  <div className="font-semibold group-hover:text-primary transition">+1 (579) 796-4824</div>
                 </div>
               </a>
               <a href="mailto:support@prodigypro-marketing.com" className="flex items-start gap-4 group">
