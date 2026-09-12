@@ -83,6 +83,9 @@ function Contact() {
             <div className="mt-4">
               <label className="text-xs uppercase tracking-wider text-muted-foreground">Service</label>
               <select className="mt-1.5 w-full rounded-xl bg-background/40 border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary">
+                <option>CRM Automation</option>
+                <option>GoHighLevel Implementation</option>
+                <option>AI Agents &amp; Chatbots</option>
                 <option>Digital Marketing</option>
                 <option>Website Development</option>
                 <option>Sales Funnels</option>
