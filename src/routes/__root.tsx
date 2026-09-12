@@ -72,7 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/lGIustX9erae4WO60xOKYzqRP6w1/social-images/social-1778427595439-Create_a_professional_logo_for__ProdigyPro_Marketing_Agency,__a_web_design_and_funnel_expert_agency.__The_logo_should_be_clean,_modern,_and_incorporate_a_color_palette_of_light_green_and_white.__It_should_feature_a_.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/lGIustX9erae4WO60xOKYzqRP6w1/social-images/social-1778427595439-Create_a_professional_logo_for__ProdigyPro_Marketing_Agency,__a_web_design_and_funnel_expert_agency.__The_logo_should_be_clean,_modern,_and_incorporate_a_color_palette_of_light_green_and_white.__It_should_feature_a_.webp" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
