@@ -59,11 +59,12 @@ export function SiteFooter() {
           <div>
             <h4 className="text-sm font-semibold tracking-wide uppercase">Services</h4>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <li>Digital Marketing</li>
-              <li>Web Development</li>
-              <li>Sales Funnels</li>
-              <li>Lead Generation</li>
-              <li>SEO & GMB</li>
+              <li><Link to="/services" hash="flagship-services" className="hover:text-foreground">CRM Automation</Link></li>
+              <li><Link to="/services" hash="flagship-services" className="hover:text-foreground">GoHighLevel Systems</Link></li>
+              <li><Link to="/services" hash="flagship-services" className="hover:text-foreground">AI Agents & Chatbots</Link></li>
+              <li><Link to="/services" hash="supporting-services" className="hover:text-foreground">Sales Funnels & Websites</Link></li>
+              <li><Link to="/services" hash="supporting-services" className="hover:text-foreground">SEO & Lead Generation</Link></li>
+              <li><Link to="/services" hash="packages-heading" className="hover:text-foreground">Pricing & Packages</Link></li>
             </ul>
           </div>
 
@@ -88,6 +89,10 @@ export function SiteFooter() {
 
         <div className="mt-14 pt-6 border-t border-border/60 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} ProdigyPro Marketing. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <Link to="/privacy" className="hover:text-foreground">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground">Terms of Service</Link>
+          </div>
           <p>Crafted for brands that demand more.</p>
         </div>
       </div>
