@@ -62,7 +62,12 @@ function Portfolio() {
         <div className="cta-panel px-6 py-14 md:px-12">
           <span className="eyebrow">Your system, next</span>
           <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-bold sm:text-3xl md:text-5xl">Let’s turn your growth process into an advantage.</h2>
-          <div className="mt-7"><BookCallButton label="Discuss Your Project" /></div>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <BookCallButton label="Discuss Your Project" />
+            <a href="tel:+15797964824" className="button-secondary" aria-label="Call or text ProdigyPro at +1 (579) 796-4824">
+              Call or Text Us
+            </a>
+          </div>
         </div>
       </section>
     </>
