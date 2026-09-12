@@ -59,6 +59,39 @@ const process = [
   { step: "04", title: "Optimize", desc: "We monitor the numbers, refine weak points and expand what produces measurable growth." },
 ];
 
+const packages = [
+  {
+    icon: Target,
+    name: "Automation Sprint",
+    price: "From $1,000",
+    best: "Best for one high-impact fix",
+    desc: "A focused 2–3 week build to solve the single biggest leak in your lead flow.",
+    includes: ["Growth & pipeline audit", "One CRM or funnel build", "Lead capture + instant follow-up", "Team walkthrough & docs"],
+  },
+  {
+    icon: Settings2,
+    name: "Growth System",
+    price: "From $2,800",
+    best: "Most popular",
+    desc: "The full operating system: CRM, funnels, automations, AI agent and reporting connected end to end.",
+    includes: ["Full GoHighLevel/CRM build", "Funnels, calendars, workflows", "AI agent or chatbot", "Attribution dashboards", "30 days post-launch support"],
+    featured: true,
+  },
+  {
+    icon: Gauge,
+    name: "Managed Growth",
+    price: "From $1,500/mo",
+    best: "Best for ongoing scale",
+    desc: "We run, optimize and expand your system while you focus on selling.",
+    includes: ["Continuous optimization", "Campaign & funnel iteration", "AI agent tuning", "Monthly reporting call", "Priority support"],
+  },
+];
+
+const platforms = [
+  "GoHighLevel", "HubSpot", "Pipedrive", "Zoho", "Salesforce", "Make", "Zapier", "n8n",
+  "Twilio", "Stripe", "Calendly", "Google Ads", "Meta Ads", "GA4", "Slack", "Shopify",
+];
+
 const faqs = [
   { q: "How long does a CRM or GoHighLevel build take?", a: "Most core builds go live in 3–6 weeks depending on the number of pipelines, integrations and automations involved. We share a clear timeline after the audit." },
   { q: "Can you work with our existing CRM?", a: "Yes. We regularly build on GoHighLevel, but we also automate and optimize HubSpot, Pipedrive, Zoho and custom stacks." },
