@@ -6,6 +6,8 @@ import crmImage from "@/assets/portfolio-crm.jpg";
 import ghlImage from "@/assets/portfolio-gohighlevel.jpg";
 import aiImage from "@/assets/portfolio-ai-agent.jpg";
 import conversionImage from "@/assets/portfolio-conversion.jpg";
+import lifecycleImage from "@/assets/portfolio-lifecycle.jpg";
+import leadgenImage from "@/assets/portfolio-leadgen.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => buildSeo({
@@ -23,6 +25,8 @@ const projects = [
   { tag: "GoHighLevel", title: "Always-on appointment engine", metric: "+186% Bookings", desc: "A complete GoHighLevel implementation connecting landing pages, calendars, missed-call workflows and sales reporting.", img: ghlImage, deliverables: ["GHL architecture", "Automations", "Attribution"] },
   { tag: "AI Agent", title: "24/7 qualification assistant", metric: "71% Self-served", desc: "An AI chat experience trained around service criteria, qualification rules and seamless handoff to the sales team.", img: aiImage, deliverables: ["Knowledge design", "Qualification", "Human handoff"] },
   { tag: "Growth System", title: "Revenue visibility rebuild", metric: "+42% Conversion", desc: "A conversion-led website, campaign tracking and executive dashboard working as one measurable acquisition system.", img: conversionImage, deliverables: ["CRO strategy", "Tracking", "Dashboards"] },
+  { tag: "Lifecycle Marketing", title: "Nurture engine on autopilot", metric: "+58% Repeat Revenue", desc: "Automated email and SMS journeys covering onboarding, retention, win-back and referrals — every customer touched at the right moment.", img: lifecycleImage, deliverables: ["Journey mapping", "Email + SMS flows", "Win-back automation"] },
+  { tag: "SEO & Lead Gen", title: "Local demand capture system", metric: "#1 Map Pack", desc: "Local search dominance paired with intent-led landing pages, turning map visibility and organic traffic into a steady flow of booked jobs.", img: leadgenImage, deliverables: ["Local SEO", "Landing pages", "Call tracking"] },
 ];
 
 function Portfolio() {
