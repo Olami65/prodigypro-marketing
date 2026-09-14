@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 import { buildSeo } from "@/lib/seo";
 import { posts } from "@/lib/posts";
-import BookCallButton from "@/components/BookCallButton";
+import { BookCallButton } from "@/components/BookCallButton";
 
 export const Route = createFileRoute("/blog")({
   head: () => buildSeo({
