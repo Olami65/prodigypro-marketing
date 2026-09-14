@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Calendar, Check, Clock } from "lucide-react";
 import { buildSeo } from "@/lib/seo";
 import { getPost, posts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
-import BookCallButton from "@/components/BookCallButton";
+import { BookCallButton } from "@/components/BookCallButton";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
