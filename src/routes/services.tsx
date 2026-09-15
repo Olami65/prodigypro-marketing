@@ -253,6 +253,21 @@ function Services() {
         </div>
       </section>
 
+      <section className="section-frame py-12">
+        <div className="premium-card flex flex-wrap items-center justify-between gap-6 p-7 md:p-9">
+          <div className="max-w-xl">
+            <span className="eyebrow">Client portal</span>
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Track your build in real time</h2>
+            <p className="mt-3 text-muted-foreground">
+              Every ProdigyPro client gets a secure login to follow project status and progress, read team updates and
+              send us feedback, assets or questions — no email threads required.
+            </p>
+          </div>
+          <Link to="/auth" className="button-secondary">
+            Open the client portal
+          </Link>
+        </div>
+      </section>
 
       <section className="section-frame pb-12 text-center">
         <div className="cta-panel px-6 py-14 md:px-12 md:py-16">
