@@ -42,6 +42,7 @@ export function SiteFooter() {
               <li><Link to="/testimonials" className="hover:text-foreground">Testimonials</Link></li>
               <li><Link to="/blog" className="hover:text-foreground">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
+              <li><Link to="/auth" className="hover:text-foreground">Client Portal</Link></li>
               <li>
                 <a
                   href={CALENDLY_URL}
